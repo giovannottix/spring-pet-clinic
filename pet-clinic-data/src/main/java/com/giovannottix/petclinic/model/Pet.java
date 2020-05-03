@@ -1,4 +1,4 @@
-package com.giovannottix.petclinic.domain;
+package com.giovannottix.petclinic.model;
 
 import java.time.LocalDate;
 
