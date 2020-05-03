@@ -5,7 +5,7 @@ package com.giovannottix.petclinic.model;
  *
  * @since : 05/03/20, Sun
  */
-public class Person {
+public class Person extends BaseEntity {
 
     private String firstName;
 
