@@ -1,7 +1,7 @@
 package com.giovannottix.petclinic.services.map;
 
 import com.giovannottix.petclinic.model.Owner;
-import com.giovannottix.petclinic.services.CrudService;
+import com.giovannottix.petclinic.services.OwnerService;
 
 import java.util.Set;
 
@@ -9,7 +9,7 @@ import java.util.Set;
  * @author: Giovanni Esposito.
  * @Date : 05/04/20, Mon
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Owner findById(Long id) {
@@ -34,5 +34,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public void delete(Owner owner) {
         super.delete(owner);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

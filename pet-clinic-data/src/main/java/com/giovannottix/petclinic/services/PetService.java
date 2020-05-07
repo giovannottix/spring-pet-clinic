@@ -7,6 +7,6 @@ import com.giovannottix.petclinic.model.Pet;
  *
  * @since : 05/03/20, Sun
  */
-public interface PerService extends CrudService<Pet, Long> {
+public interface PetService extends CrudService<Pet, Long> {
 
 }

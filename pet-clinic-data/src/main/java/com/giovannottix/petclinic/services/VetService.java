@@ -7,7 +7,7 @@ import com.giovannottix.petclinic.model.Vet;
  *
  * @since : 05/03/20, Sun
  */
-public interface VetService extends PersonService<Vet, Long> {
+public interface VetService extends CrudService<Vet, Long> {
 
     Vet findByLastName(String lastName);
 
