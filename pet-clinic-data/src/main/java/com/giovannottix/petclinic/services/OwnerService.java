@@ -7,7 +7,7 @@ import com.giovannottix.petclinic.model.Owner;
  *
  * @since : 05/03/20, Sun
  */
-public interface OwnerService extends PersonService<Owner, Long> {
+public interface OwnerService extends CrudService<Owner, Long> {
 
     Owner findByLastName(String lastName);
 
