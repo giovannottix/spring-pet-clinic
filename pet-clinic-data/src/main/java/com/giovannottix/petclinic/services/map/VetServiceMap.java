@@ -2,6 +2,7 @@ package com.giovannottix.petclinic.services.map;
 
 import com.giovannottix.petclinic.model.Vet;
 import com.giovannottix.petclinic.services.VetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import java.util.Set;
  * @author: Giovanni Esposito.
  * @Date : 05/05/20, Tue
  */
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
     @Override
