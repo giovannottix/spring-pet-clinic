@@ -4,7 +4,7 @@ package com.giovannottix.petclinic.model;
  * @author: Giovanni Esposito.
  * @Date : 05/09/20, Sat
  */
-public class Speciality {
+public class Speciality extends BaseEntity{
 
     private String description;
 
