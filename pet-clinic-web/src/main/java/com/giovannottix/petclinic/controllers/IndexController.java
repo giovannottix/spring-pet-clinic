@@ -1,6 +1,7 @@
 package com.giovannottix.petclinic.controllers;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -15,4 +16,9 @@ public class IndexController {
         return "index";
     }
 
+    @RequestMapping({"/oups"})
+    public String oups(Model model) {
+
+        return "notimplemented";
+    }
 }
