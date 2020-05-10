@@ -1,6 +1,7 @@
 package com.giovannottix.petclinic.services.map;
 
 import com.giovannottix.petclinic.model.Vet;
+import com.giovannottix.petclinic.services.SpecialityService;
 import com.giovannottix.petclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,12 @@ import java.util.Set;
  */
 @Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+
+    private final SpecialityService specialityService;
+
+    public VetServiceMap(SpecialityService specialityService) {
+        this.specialityService = specialityService;
+    }
 
     @Override
     public Vet findByLastName(String lastName) {
@@ -25,6 +32,18 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
 
     @Override
     public Vet save(Vet vet) {
+        if(vet != null) {
+            if(!vet.getSpecialities().isEmpty()) {
+                vet.getSpecialities().forEach(speciality -> {
+                    if(speciality.getId() == null){
+                        specialityService.save(speciality);
+                    }
+                });
+            }
+        } else {
+            throw new RuntimeException("Vet can not be null");
+        }
+
         return super.save(vet);
     }
 
