@@ -1,6 +1,7 @@
 package com.giovannottix.petclinic.bootstrap;
 
 import com.giovannottix.petclinic.model.Owner;
+import com.giovannottix.petclinic.model.Pet;
 import com.giovannottix.petclinic.model.PetType;
 import com.giovannottix.petclinic.model.Vet;
 import com.giovannottix.petclinic.services.OwnerService;
@@ -8,6 +9,8 @@ import com.giovannottix.petclinic.services.PetTypeService;
 import com.giovannottix.petclinic.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 /**
  * @author: Giovanni Esposito.
@@ -40,12 +43,34 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Giovanni");
         owner1.setLastName("Esposito");
+        owner1.setAddress("Address1");
+        owner1.setCity("City1");
+        owner1.setTelephone("Telephone1");
+
+        Pet dino = new Pet();
+        dino.setType(dog);
+        dino.setName("Dino");
+        dino.setBirthDate(LocalDate.now());
+        dino.setOwner(owner1);
+
+        owner1.getPets().add(dino);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Pedro");
         owner2.setLastName("Picapiedra");
+        owner2.setAddress("Address2");
+        owner2.setCity("City2");
+        owner2.setTelephone("Telephone2");
+
+        Pet saber = new Pet();
+        saber.setType(cat);
+        saber.setName("Saber");
+        saber.setBirthDate(LocalDate.now());
+        saber.setOwner(owner2);
+
+        owner2.getPets().add(saber);
 
         ownerService.save(owner2);
 

@@ -1,5 +1,6 @@
 package com.giovannottix.petclinic.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -12,7 +13,7 @@ public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
-    private Set<Pet> set;
+    private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {
         return address;
@@ -38,11 +39,11 @@ public class Owner extends Person {
         this.telephone = telephone;
     }
 
-    public Set<Pet> getSet() {
-        return set;
+    public Set<Pet> getPets() {
+        return pets;
     }
 
-    public void setSet(Set<Pet> set) {
-        this.set = set;
+    public void setPets(Set<Pet> pets) {
+        this.pets = pets;
     }
 }
