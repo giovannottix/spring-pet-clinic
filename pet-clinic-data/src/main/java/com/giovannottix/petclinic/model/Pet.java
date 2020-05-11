@@ -1,5 +1,6 @@
 package com.giovannottix.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
@@ -7,14 +8,22 @@ import java.time.LocalDate;
  *
  * @since : 05/03/20, Sun
  */
+@Entity
+@Table(name = "pets")
 public class Pet extends BaseEntity {
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "birth_day")
     private LocalDate birthDate;
 
+    @ManyToOne
+    @JoinColumn(name = "type_id")
     private PetType type;
 
+    @ManyToOne
+    @JoinColumn(name = "owner_id")
     private Owner owner;
 
     public String getName() {
