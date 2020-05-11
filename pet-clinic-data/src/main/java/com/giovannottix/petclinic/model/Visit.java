@@ -1,16 +1,25 @@
 package com.giovannottix.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
  * @author: Giovanni Esposito.
  * @Date : 05/09/20, Sat
  */
+@Entity
+@Table(name = "visits")
 public class Visit {
 
+    @Column(name = "date")
     private LocalDate date;
+
+    @Column(name = "description")
     private String description;
-    private Pet petId;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
+    private Pet pet;
 
     public LocalDate getDate() {
         return date;
@@ -28,11 +37,11 @@ public class Visit {
         this.description = description;
     }
 
-    public Pet getPetId() {
-        return petId;
+    public Pet getPet() {
+        return pet;
     }
 
-    public void setPetId(Pet petId) {
-        this.petId = petId;
+    public void setPet(Pet petId) {
+        this.pet = petId;
     }
 }
