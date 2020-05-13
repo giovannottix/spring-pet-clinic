@@ -85,15 +85,15 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Owners....");
 
-        Speciality radiology = new Speciality();
+        Specialty radiology = new Specialty();
         radiology.setDescription("Radiology");
         specialityService.save(radiology);
 
-        Speciality surgery = new Speciality();
+        Specialty surgery = new Specialty();
         surgery.setDescription("Surgery");
         specialityService.save(surgery);
 
-        Speciality dentistry = new Speciality();
+        Specialty dentistry = new Specialty();
         dentistry.setDescription("Dentistry");
         specialityService.save(dentistry);
 
