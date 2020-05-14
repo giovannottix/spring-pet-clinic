@@ -1,7 +1,7 @@
 package com.giovannottix.petclinic.services.map;
 
-import com.giovannottix.petclinic.model.Pet;
-import com.giovannottix.petclinic.services.PetService;
+import com.giovannottix.petclinic.model.PetType;
+import com.giovannottix.petclinic.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,20 +11,20 @@ import java.util.Set;
  * @Date : 05/05/20, Tue
  */
 @Service
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class PetTypeMapService extends AbstractMapService<PetType, Long> implements PetTypeService {
 
     @Override
-    public Pet findById(Long id) {
+    public PetType findById(Long id) {
         return super.findById(id);
     }
 
     @Override
-    public Pet save(Pet pet) {
-        return super.save(pet);
+    public PetType save(PetType petType) {
+        return super.save(petType);
     }
 
     @Override
-    public Set<Pet> findAll() {
+    public Set<PetType> findAll() {
         return super.findAll();
     }
 
@@ -34,7 +34,7 @@ public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetS
     }
 
     @Override
-    public void delete(Pet pet) {
-        super.delete(pet);
+    public void delete(PetType petType) {
+        super.delete(petType);
     }
 }

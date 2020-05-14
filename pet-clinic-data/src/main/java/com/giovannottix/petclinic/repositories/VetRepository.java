@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
  * @Date : 05/13/20, Wed
  */
 public interface VetRepository extends CrudRepository<Vet, Long> {
-
+    Vet findByLastName(String lastName);
 }

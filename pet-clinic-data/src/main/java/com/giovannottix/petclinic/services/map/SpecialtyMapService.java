@@ -1,7 +1,7 @@
 package com.giovannottix.petclinic.services.map;
 
 import com.giovannottix.petclinic.model.Specialty;
-import com.giovannottix.petclinic.services.SpecialityService;
+import com.giovannottix.petclinic.services.SpecialtyService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,8 +11,8 @@ import java.util.Set;
  * @Date : 05/05/20, Tue
  */
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Specialty,
-        Long> implements SpecialityService {
+public class SpecialtyMapService extends AbstractMapService<Specialty,
+        Long> implements SpecialtyService {
 
     @Override
     public Specialty findById(Long id) {

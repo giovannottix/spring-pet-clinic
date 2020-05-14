@@ -1,7 +1,7 @@
 package com.giovannottix.petclinic.services.map;
 
 import com.giovannottix.petclinic.model.Vet;
-import com.giovannottix.petclinic.services.SpecialityService;
+import com.giovannottix.petclinic.services.SpecialtyService;
 import com.giovannottix.petclinic.services.VetService;
 import org.springframework.stereotype.Service;
 
@@ -12,12 +12,12 @@ import java.util.Set;
  * @Date : 05/05/20, Tue
  */
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
-    private final SpecialityService specialityService;
+    private final SpecialtyService specialtyService;
 
-    public VetServiceMap(SpecialityService specialityService) {
-        this.specialityService = specialityService;
+    public VetMapService(SpecialtyService specialtyService) {
+        this.specialtyService = specialtyService;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetS
             if(!vet.getSpecialities().isEmpty()) {
                 vet.getSpecialities().forEach(speciality -> {
                     if(speciality.getId() == null){
-                        specialityService.save(speciality);
+                        specialtyService.save(speciality);
                     }
                 });
             }
