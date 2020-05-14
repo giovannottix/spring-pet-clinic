@@ -7,6 +7,6 @@ import com.giovannottix.petclinic.model.Specialty;
  *
  * @since : 05/03/20, Sun
  */
-public interface SpecialityService extends CrudService<Specialty, Long> {
+public interface SpecialtyService extends CrudService<Specialty, Long> {
 
 }
