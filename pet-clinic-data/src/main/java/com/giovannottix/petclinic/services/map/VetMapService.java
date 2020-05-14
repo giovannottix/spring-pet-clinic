@@ -3,6 +3,7 @@ package com.giovannottix.petclinic.services.map;
 import com.giovannottix.petclinic.model.Vet;
 import com.giovannottix.petclinic.services.SpecialtyService;
 import com.giovannottix.petclinic.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -12,6 +13,7 @@ import java.util.Set;
  * @Date : 05/05/20, Tue
  */
 @Service
+@Profile({"default", "map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialtyService specialtyService;
