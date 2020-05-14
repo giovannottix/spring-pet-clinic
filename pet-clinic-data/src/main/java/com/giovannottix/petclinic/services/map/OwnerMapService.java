@@ -4,6 +4,7 @@ import com.giovannottix.petclinic.model.Owner;
 import com.giovannottix.petclinic.services.OwnerService;
 import com.giovannottix.petclinic.services.PetService;
 import com.giovannottix.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -13,6 +14,7 @@ import java.util.Set;
  * @Date : 05/04/20, Mon
  */
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

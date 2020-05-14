@@ -2,6 +2,7 @@ package com.giovannottix.petclinic.services.map;
 
 import com.giovannottix.petclinic.model.Pet;
 import com.giovannottix.petclinic.services.PetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
@@ -11,6 +12,7 @@ import java.util.Set;
  * @Date : 05/05/20, Tue
  */
 @Service
+@Profile({"default", "map"})
 public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
