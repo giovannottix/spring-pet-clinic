@@ -7,6 +7,7 @@ import com.giovannottix.petclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -74,6 +75,15 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        if(!Optional.ofNullable(lastName).isPresent()){
+            throw new IllegalArgumentException("LastName cannot be null");
+        }
+
+        return findAll()
+                .stream()
+                .filter(
+                        owner -> lastName.equalsIgnoreCase(owner.getLastName()))
+                .findFirst()
+                .orElse(null);
     }
 }
