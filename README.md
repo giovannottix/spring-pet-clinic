@@ -1,6 +1,6 @@
+[![CircleCI](https://circleci.com/gh/giovannottix/spring-pet-clinic.svg?style=svg)](https://circleci.com/gh/giovannottix/spring-pet-clinic)
 # Spring Pet Clinic
 
-[![CircleCI](https://circleci.com/gh/giovannottix/spring-pet-clinic.svg?style=svg)](https://circleci.com/gh/giovannottix/spring-pet-clinic)
 
 Spring Pet Clinic is a classic reference application used to demonstrate best practices. The Pet Clinic application actually has it's origin within the J2EE/JEE community.
 
