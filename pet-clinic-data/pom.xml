@@ -33,11 +33,6 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
         <!--To include JUnit 5 on previous versions of SprintBoot-->
         <!--
         <dependency>
