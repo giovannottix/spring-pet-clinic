@@ -7,8 +7,10 @@ import com.giovannottix.petclinic.services.PetTypeService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author: Giovanni Esposito.
@@ -85,5 +87,14 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
                         owner -> lastName.equalsIgnoreCase(owner.getLastName()))
                 .findFirst()
                 .orElse(null);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return findAll()
+                .stream()
+                .filter(owner ->
+                        owner.getLastName().equalsIgnoreCase(lastName))
+                .collect(Collectors.toList());
     }
 }
